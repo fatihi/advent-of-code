@@ -1,4 +1,4 @@
-package de.fatih-inan;
+package de.fatih_inan;
 
 /**
  * Hello world!

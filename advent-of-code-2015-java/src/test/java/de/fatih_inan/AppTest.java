@@ -1,4 +1,4 @@
-package de.fatih-inan;
+package de.fatih_inan;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
