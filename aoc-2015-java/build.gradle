@@ -12,6 +12,9 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // https://mvnrepository.com/artifact/com.github.stefanbirkner/system-lambda
+    testImplementation group: 'com.github.stefanbirkner', name: 'system-lambda', version: '1.2.1'
 }
 
 test {
