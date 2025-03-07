@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group = 'de.fatihi_inan'
+group = 'de.fatih_inan'
 version = '1.0-SNAPSHOT'
 
 repositories {
