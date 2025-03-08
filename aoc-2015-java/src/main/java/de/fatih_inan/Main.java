@@ -1,10 +1,13 @@
 package de.fatih_inan;
 
+import com.google.common.io.Resources;
 import io.github.classgraph.ClassGraph;
 import io.github.classgraph.ClassInfo;
 import io.github.classgraph.ClassInfoList;
 import io.github.classgraph.ScanResult;
 
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -20,11 +23,11 @@ public class Main {
 
             boolean exit = false;
             while (!exit) {
-                System.out.print("Which day do you want to run? [1-" + classes.size() + "] :");
+                System.out.print("Which day? [1-" + classes.size() + "] : ");
 
                 try {
-                    String input = scanner.nextLine();
-                    int dayNumber = Integer.parseInt(input);
+                    String userInput = scanner.nextLine();
+                    int dayNumber = Integer.parseInt(userInput);
                     Optional<ClassInfo> dayOption = classes.stream()
                             .filter(x -> x.getName().equals("de.fatih_inan.days.Day" + dayNumber))
                             .findFirst();
@@ -38,21 +41,25 @@ public class Main {
                     Class<Day> dayClass = (Class<Day>) dayOption.get().loadClass();
                     Day day = dayClass.getDeclaredConstructor().newInstance();
 
-                    System.out.print("Which part do you want to run? [1,2] :");
-                    input = scanner.nextLine();
+                    System.out.print("Which part? [1,2] : ");
 
-                    int part = Integer.parseInt(input);
+                    URL url = Resources.getResource("Day" + dayNumber + ".txt");
+                    String puzzleInput = Resources.toString(url, StandardCharsets.UTF_8);
+
+                    userInput = scanner.nextLine();
+
+                    int part = Integer.parseInt(userInput);
                     while (part < 1 || part > 2) {
                         System.out.println("Please select part 1 or 2.");
-                        part = Integer.parseInt(input);
+                        part = Integer.parseInt(userInput);
                     }
 
                     switch (part) {
                         case 1:
-                            System.out.println("Result: " + day.part1("part1"));
+                            System.out.println("Result: " + day.part1(puzzleInput));
                             break;
                         case 2:
-                            System.out.println("Result: " + day.part2("part2"));
+                            System.out.println("Result: " + day.part2(puzzleInput));
                             break;
                     }
                 } catch (NumberFormatException e) {

@@ -21,6 +21,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/io.github.toolfactory/narcissus
     implementation group: 'io.github.toolfactory', name: 'narcissus', version: '1.0.7'
+
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    implementation group: 'com.google.guava', name: 'guava', version: '33.4.0-jre'
 }
 
 test {
