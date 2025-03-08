@@ -12,6 +12,7 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     // https://mvnrepository.com/artifact/com.github.stefanbirkner/system-lambda
     testImplementation group: 'com.github.stefanbirkner', name: 'system-lambda', version: '1.2.1'
@@ -24,6 +25,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.google.guava/guava
     implementation group: 'com.google.guava', name: 'guava', version: '33.4.0-jre'
+
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.12.0'
 }
 
 test {
