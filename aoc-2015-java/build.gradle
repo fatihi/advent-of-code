@@ -15,6 +15,12 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.github.stefanbirkner/system-lambda
     testImplementation group: 'com.github.stefanbirkner', name: 'system-lambda', version: '1.2.1'
+
+    // https://mvnrepository.com/artifact/io.github.classgraph/classgraph
+    implementation group: 'io.github.classgraph', name: 'classgraph', version: '4.8.179'
+
+    // https://mvnrepository.com/artifact/io.github.toolfactory/narcissus
+    implementation group: 'io.github.toolfactory', name: 'narcissus', version: '1.0.7'
 }
 
 test {
