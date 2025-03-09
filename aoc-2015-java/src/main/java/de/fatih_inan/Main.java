@@ -19,7 +19,8 @@ public class Main {
                              .scan()) {
             ClassInfoList classes = scanResult.getAllClasses();
             try {
-                for (int i = 1; i <= classes.size(); i++) {
+                // for (int i = 1; i <= classes.size(); i++) {
+                for (int i = classes.size(); i <= classes.size(); i++) {
                     int dayNumber = i;
                     Optional<ClassInfo> dayOption = classes.stream()
                             .filter(x -> x.getName().equals("de.fatih_inan.days.Day" + dayNumber))
