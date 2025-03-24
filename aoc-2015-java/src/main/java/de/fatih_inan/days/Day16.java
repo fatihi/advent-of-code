@@ -20,7 +20,6 @@ public class Day16 implements Day {
         return "-1";
     }
 
-
     private List<AuntSue> readAuntSues(String input) {
         String[] lines = input.replace(":", "").replace(",", "").split("\n");
         List<AuntSue> auntSues = new ArrayList<>();
